@@ -1,8 +1,8 @@
-//localhost:5000/api/uno
+//localhost:3000/api/uno
 const express = require('express'); //REQUERIMOS EXPRESS
 
-//CONFIG PUERTO
-const port = process.env.PORT || 5000;
+//CONFIGURAR PUERTO
+const port = process.env.PORT || 3000;
 
 //RUTAS
 const computadora_route = require('./routes/Usuario')
@@ -10,7 +10,7 @@ const computadora_route = require('./routes/Usuario')
 //INICIALIZAR EXPRESS
 const app = express();
 
-//CONFIG SERVER
+//CONFIGURAR SERVER
 app.use(express.json());
 
 //USO DE RUTA
@@ -27,7 +27,7 @@ app.use('/api',(error, req, res, next) => {
     });
 });
 
-//CONFIG APP
+//CONFIGURAR APP
 app.listen(port, function() {
     console.log("API Rest corriendo en el puerto: " + port);
     console.log(" " + " " + " " +" " + " " + " " +" " + " " + " " + "CONEXION CORRECTA");
