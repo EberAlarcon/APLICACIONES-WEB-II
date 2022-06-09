@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const express_validator_1 = require("express-validator");
+const controllers_1 = require("../controllers");
+const { crear_producto, Obtener_producto, Obtener_productos } = controllers_1.Producto;
+const router = (0, express_1.Router)();
+router.get('/', Obtener_productos);
+router.get('/:id', (0, express_validator_1.check)('id', 'Debe ser un id de mongo').isMongoId(), Obtener_producto);
+router.post('/', (0, express_validator_1.check)('nombre', 'El nombre es obligatorio').not().isEmpty(), crear_producto);
