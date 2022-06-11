@@ -1,4 +1,4 @@
-
+//Estrucutura del modelo que tendrá como base la tabla
 import mongoose, { Mongoose } from "mongoose";
 import {Schema, model} from "mongoose";
 import{IProducto} from '../interfaces'
