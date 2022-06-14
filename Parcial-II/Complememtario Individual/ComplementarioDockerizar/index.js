@@ -5,3 +5,8 @@
 //tsc --init
 //npm i typescript
 
+// npm install mongoose
+// npm install express-validator
+// npm install cors
+// npm install dotenv
+// npm install -g nodemon
