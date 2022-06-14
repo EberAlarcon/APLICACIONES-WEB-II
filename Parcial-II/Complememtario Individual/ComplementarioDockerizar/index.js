@@ -10,3 +10,12 @@
 // npm install cors
 // npm install dotenv
 // npm install -g nodemon
+
+
+import{config}from 'dotenv'
+config()
+import{Server}from './server'
+
+const server=new Server()
+
+server.listen()
