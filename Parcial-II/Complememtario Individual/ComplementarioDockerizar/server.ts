@@ -32,7 +32,7 @@ import administradorRoutes from './routes/Administrador'
     }
 
     routes(){// Rutas donde importortamos los símbolos de modulos al hambito actual.
-        this.app.use(this.paths.cliente
+        this.app.use(this.paths.administrador
             ,administradorRoutes);
         
     

@@ -40,7 +40,7 @@ class Server {
         });
     }
     routes() {
-        this.app.use(this.paths.cliente, Administrador_1.default);
+        this.app.use(this.paths.administrador, Administrador_1.default);
     }
     listen() {
         this._express.listen(this.port, () => {

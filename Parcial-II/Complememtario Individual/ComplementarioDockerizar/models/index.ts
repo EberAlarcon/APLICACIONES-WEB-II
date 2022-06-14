@@ -1,4 +1,4 @@
-import { Administrador } from "./Admistradores";
+import { Administrador } from "./Administradores";
 
 export{ 
     Administrador
