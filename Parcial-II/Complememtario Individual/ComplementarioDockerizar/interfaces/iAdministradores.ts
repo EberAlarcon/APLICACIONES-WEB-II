@@ -7,4 +7,5 @@ export interface IAdministradores{
     nusuario: String;
     correo: String;
     contrasena: String;
+    estado: Boolean;
 }

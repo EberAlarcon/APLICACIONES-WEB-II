@@ -26,9 +26,15 @@ Schema = new Schema<IAdministradores>({
         type: String,
         required:[true, `La contraseña es obligatoria`],
         unique: true
+    },
+    estado:{
+        type: Boolean,
+        default:true,
+        required:true,
+    }
     }
 
-})
+)
 const Administrador: mongoose.Model<IAdministradores> = model<IAdministradores>
 ('Administrador', AdministradoresSchema);
 
