@@ -1,7 +1,6 @@
-//Impotamos mongoose
 import{connect}from 'mongoose'
-//Se crea una funcion para establecer la coneccion con la base de datos de mongoose
-const dbConnection=async ()=>{
+
+ const dbConnection=async ()=>{
     try{
       await  connect(process.env["MONGODB_CNN"]||"")
       console.log("Base de datos sin errores a ejecutarse")
@@ -11,4 +10,4 @@ const dbConnection=async ()=>{
         throw new Error("Error a conectarse a la base de datos")
     }
 }
-export={dbConnection}
+export= dbConnection
