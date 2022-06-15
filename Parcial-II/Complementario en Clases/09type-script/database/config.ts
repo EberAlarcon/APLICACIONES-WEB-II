@@ -11,4 +11,4 @@ const dbConnection=async ()=>{
         throw new Error("Error a conectarse a la base de datos")
     }
 }
-export={dbConnection}
+export {dbConnection}

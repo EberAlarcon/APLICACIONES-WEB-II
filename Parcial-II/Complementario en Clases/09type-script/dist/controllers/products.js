@@ -22,6 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.crear_producto = exports.Obtener_productos = exports.Obtener_producto = void 0;
 const models_1 = require("../models");
+//Definir funciones
 const Obtener_productos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     //mas liviano await Producto.find().lean()
     const { limite = '10', desde = '0' } = req.query;
@@ -45,6 +46,7 @@ const Obtener_producto = (req, res) => __awaiter(void 0, void 0, void 0, functio
     res.json(producto);
 });
 exports.Obtener_producto = Obtener_producto;
+//Funcion de crear algun producto y se realizo una condicion que no permita guardar un producto existente
 const crear_producto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const _a = req.body, { estado } = _a, body = __rest(_a, ["estado"]);
     const existeProducto = yield models_1.Producto.findOne({ nombre: body.nombre });

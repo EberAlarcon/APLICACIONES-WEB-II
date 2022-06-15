@@ -1,48 +1,51 @@
-import express from 'express'
-import {Router} from 'express'
-import {Application} from 'express'
-import dbConnection from './database/config'
-import administradorRoutes from './routes/Administrador'
- class Server{
-    private app: Application;
+// //Se crea una clase Server con su contructor difiniendo las funciones y exportando la clase
+import express,{Router, Express } from 'express'
+ import cors from 'cors';
+
+import { router as administradores } from './routes/Administrador'
+import { dbConnection } from './database/config'
+
+class Server
+{
+    app: Router;
     router: Router;
-     private _express: any;
-     private paths: any;  
-     private port: any;  
-    // nota_routes = require('./routes/Products');
+    port: Number;
+    paths: { [key:string]:string };
+    private _express: Express;
+//  //Asignaremos en el constructor
     constructor(){
-      
-        this.app = express();
-       this.router=Router();
-       this.port = process.env.PORT;
-       this.paths= {
-        administrador:
-        '/api/administrador',//definimos la ruta que tomara para cliente en el server
-         }
-        
+        this.app = Router();
+        this.router = Router();
+        this.port= Number( process.env["PORT"])
+        this.paths= {
+            productos:'/api/productos',
+            clientes:'/api/clientes',
+        }
+
+//     //Defininr los metodos
+        this.conectarDb();
+        this.middlewares();
         this.routes();
-        this.conectarBD();
-        this.router.use('/v1/salaevento', this.app);
-        this._express=  express().use(this.router)
+        this.router.use('/v1/sextoa', this.app);
+        this._express=  express().use(this.router);
     }
-    private async dbConnection(){}
-   
-    async conectarBD(){
+    private async conectarDb(){
         await dbConnection();
     }
-
-    routes(){// Rutas donde importortamos los símbolos de modulos al hambito actual.
-        this.app.use(this.paths.administrador
-            ,administradorRoutes);
-        
-    
-
+    private middlewares(){
+        this.app.use(cors());
+        this.app.use(express.json())
     }
-     listen(){
-        this._express.listen(this.port, ()=>{// Iniciar el servidor para escuchar la conexión cifrada.
-            console.log(`Servidor corriendo en puerto ${this.port}`);
+    private routes(){
+        this.app.use(this.paths.productos , productos )
+    }
+    listen(){
+        this._express.listen(this.port, ()=>{
+            console.log(`Servidor ejecutando 
+            en http://localhost:${this.port}/v1/sextoa/api/productos`);
         })
-     }
+    }
 
 }
-export{Server}
+
+export {Server}
