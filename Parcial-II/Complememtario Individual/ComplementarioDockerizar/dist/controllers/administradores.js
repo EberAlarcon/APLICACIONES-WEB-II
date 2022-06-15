@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Obtener_administrador = void 0;
 const Obtener_administrador = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json({
-        message: 'Administrador xd'
+        message: 'Aqui van los datos del administrador xd'
     });
 });
 exports.Obtener_administrador = Obtener_administrador;

@@ -9,7 +9,7 @@ import { Request, Response } from 'express'
 const Obtener_administrador=async(req:Request,res:Response)=>{
    
     res.json({
-      message: 'Administrador xd'
+      message: 'Aqui van los datos del administrador xd'
 })
 }
 
