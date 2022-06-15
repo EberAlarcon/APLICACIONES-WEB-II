@@ -25,6 +25,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const validarCampo = __importStar(require("./validarCampos"));
 exports.default = Object.assign({}, validarCampo);
+// import {validarCampo,validacionNombre,validarContraseña} from './validarCampos'
+// export {
+//     validarCampo,
+//     validacionNombre,
+//     validarContraseña
+// }
+// import * as validarCampo from './validarCampos'
+// export default{
+//     ...validarCampo
+// }
 /*
 const{validarCampo}=validarCampoa
 export default{

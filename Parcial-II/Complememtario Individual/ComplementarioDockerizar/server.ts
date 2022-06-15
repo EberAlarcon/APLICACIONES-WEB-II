@@ -18,8 +18,8 @@ class Server
         this.router = Router();
         this.port= Number( process.env["PORT"])
         this.paths= {
-            productos:'/api/productos',
-            clientes:'/api/clientes',
+            administradores:'/api/administradores',
+            
         }
 
 //     //Defininr los metodos
@@ -37,12 +37,12 @@ class Server
         this.app.use(express.json())
     }
     private routes(){
-        this.app.use(this.paths.productos , productos )
+        this.app.use(this.paths.administradores , administradores )
     }
     listen(){
         this._express.listen(this.port, ()=>{
             console.log(`Servidor ejecutando 
-            en http://localhost:${this.port}/v1/sextoa/api/productos`);
+            en http://localhost:${this.port}/v1/sextoa/api/administradores`);
         })
     }
 
