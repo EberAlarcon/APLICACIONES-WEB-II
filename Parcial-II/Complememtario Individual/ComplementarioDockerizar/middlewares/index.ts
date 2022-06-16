@@ -10,7 +10,8 @@ export default{
 // export {
 //     validarCampo,
 //     validacionNombre,
-//     validarContraseña
+//     validarContraseña,
+    
 // }
 
 

@@ -29,7 +29,7 @@ exports.default = Object.assign({}, validarCampo);
 // export {
 //     validarCampo,
 //     validacionNombre,
-//     validarContraseña
+//     validarContraseña,
 // }
 // import * as validarCampo from './validarCampos'
 // export default{
