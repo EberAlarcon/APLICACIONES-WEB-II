@@ -1,7 +1,7 @@
 {
-  "name": "clientes",
+  "name": "administrador",
   "version": "1.0.0",
-  "description": "",
+  "description": "//npm init --y\r //npm i express",
   "main": "index.js",
   "scripts": {
     "start": "node index",
