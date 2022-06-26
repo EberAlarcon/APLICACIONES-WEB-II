@@ -1,0 +1,7 @@
+
+## Installation
+**
+
+
+PARA COMPROBAR
+docker-compose up --build
