@@ -17,7 +17,9 @@
         Se ejecutó al principio: 
         * tsc -init para crear un archivo tsconfig.json
 
-        Una vez generado el archivo se dirije al archivo creado y exactamente en la linea 52 se le coloco un nombre que dará la creación de una nueva carpeta con el nombre dado para su compilación.
+        Una vez generado el archivo se dirije al archivo creado y exactamente en la linea 52 
+        se le coloco un nombre que dará la creación de una nueva carpeta con el nombre dado 
+        para su compilación.
 
         Dado todo lo anterior, se empezó a crear las carpetas como "controllers", "database", "interfaces", "middlewares", "models", "routes" cada una de ellas con archivos ts que van a permitir el desarrollo de esta actividad cada una haciendo enfasis a su estructura de cada una. Tambien se creó un archivo .env donde tendrá el puerto y el enlace del mongodb; tambien un archivo server.ts donde se asignará un constructor y se define los metodos propuestos y la ejecución del puerto por consola, y por ultimo en el index.ts que importará una librería de dotenv y también toda la configuración que se realizó en el archivo de server.ts
 
