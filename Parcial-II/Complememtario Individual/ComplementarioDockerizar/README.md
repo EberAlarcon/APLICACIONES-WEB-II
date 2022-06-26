@@ -1,7 +1,7 @@
-        
-        
-        README para indicar las instrucciones que se deben aplicar para su implementación o
-        puesta en marcha.
+
+## Installation
+**
+
 
         Primero se creó un archivo Dockerfile donde se colocó las rutas e intrucciones importantes para crear la imagen despues.
         Luego se creó un archivo docker-compose.yml colocando la imagen de mongo que se descargo con la imagen de mongo  y tambien el puerto que se harà la conexion que es el puerto 3000 basandome en el archivo .env
