@@ -1,8 +1,10 @@
 import './style.css'
 //Imporatmos axios y la ruta de interfaces para consultar
 import axios from 'axios'
+// Importamos el nombre que se le dió cuando se usó la extension de Paste y el nombre de la inteface como tal
 import{Extension, Producto} from './interfaces/IProducto'
 
+//Se define una variable para establcer la ruta del servidor rest
 const httpAxios = axios.create({
   baseURL: `http://localhost:2500/v1/sextoa/api/`
 })
@@ -25,6 +27,7 @@ etiqueta.htmlFor="id"
 app.appendChild(etiqueta);
 app.appendChild(input)
 
+//Se establece la estructura que se va a visualizar en el navegador
 app.innerHTML += `
 <label for 'nombre'>Nombre</label><input id='nombre' />
 <label for 'estado'>Estado</label><input id='estado' />
@@ -33,12 +36,14 @@ app.innerHTML += `
 <label for 'stock'>Stock</label><input id='stock' />
 <label for 'minimo'>Minimo</label><input id='minimo' />
 
+
 <button id="nuevo" >Nuevo</button>
 <button id="grabar" >Grabar</button>
 <button id="consultar" >Consultar</button>
 
 <div id="cuerpo" />
 `
+// Se define variables con cada unos de los componentes que posee la tabla de productos.
 const id = document.querySelector<HTMLInputElement>('#id')!;
 const nombre = document.querySelector<HTMLInputElement>('#nombre')!;
 const precio = document.querySelector<HTMLInputElement>('#precio')!;
@@ -47,12 +52,14 @@ const estado = document.querySelector<HTMLInputElement>('#estado')!;
 const stock = document.querySelector<HTMLInputElement>('#stock')!;
 const minimo = document.querySelector<HTMLInputElement>('#minimo')!;
 
+//Se define variables para la funcionabilidad de los botones.
 const nuevo = document.querySelector<HTMLButtonElement>("#nuevo")!
 const grabar = document.querySelector<HTMLButtonElement>("#grabar")!
 const consultar = document.querySelector<HTMLButtonElement>("#consultar")!
 
 const cuerpo = document.querySelector<HTMLDivElement>('#cuerpo')!
 
+//Establecer esta funcion para este evento que hace cuando se ingresa datos y al momento de dar clic en el boton se limpia los datos ingresados
 nuevo.addEventListener('click', ()=>{
   id.value =""
   nombre.value =""
@@ -63,6 +70,7 @@ nuevo.addEventListener('click', ()=>{
   minimo.value =""
 })
 
+//Realiza una consulta y la muestra por tabla
 consultar.addEventListener('click', async ()=>{
   const resproductos:Extension = await( await httpAxios.get<Extension>('productos')).data
   console.log(resproductos);
