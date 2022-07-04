@@ -68,7 +68,7 @@ consultar.addEventListener('click', async ()=>{
   const resproductos:Extension = await( await httpAxios.get<Extension>('productos')).data
   console.log(resproductos);
   const {productos} = resproductos
-
+//Funcion para crear una tabla
   const tabla = document.createElement('table');
   tabla.id="tabla"
   tabla.border="1"
@@ -76,6 +76,7 @@ consultar.addEventListener('click', async ()=>{
   for(const producto of productos){
     const row = tabla.insertRow();
     const celda = row.insertCell();
+//Boton para selecionar un producto y realizar una consulta del producto
     celda.innerHTML=`<button class="boton" value='${producto._id}'>${producto.nombre}</button>`;
     const celda2 = row.insertCell();
     celda2.innerHTML=`${producto.precio}`
@@ -110,7 +111,7 @@ const asignarValores=()=>{
   }
   return data;
 }
-//Metodo para grabar datos sea modificar o guardar
+//Metodo para grabar datos modificar y guardar
 grabar.addEventListener('click',async ()=>{
   const data = asignarValores()
   if(id.value.trim().length>0)
