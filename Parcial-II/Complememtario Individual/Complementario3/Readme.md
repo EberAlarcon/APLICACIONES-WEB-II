@@ -16,6 +16,7 @@ Se escogió la opcion de vanilla ts.
 Una vez que se creó el proyecto se colocó los comandos:
 
 npm install
+
 npm run dev
 
 El primero para descargar el node_modules y el segundo para ejecutar el proyecto creado
